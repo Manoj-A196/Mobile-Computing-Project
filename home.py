@@ -1,9 +1,12 @@
 import streamlit as st
 
-st.title("Home Dashboard")
+def show():
+    st.title("🏠 Home Dashboard")
 
-st.metric("Connected Devices", "4")
-st.metric("Current Power Usage", "1402 W")
-st.metric("Energy Saved Today", "25%")
+    col1, col2, col3 = st.columns(3)
 
-st.info("Suggestion: Enable Eco Mode to save more energy")
+    col1.metric("Connected Devices", "4")
+    col2.metric("Power Consumption", "1402 W")
+    col3.metric("Energy Saved", "25%")
+
+    st.info("💡 Suggestion: Enable Eco Mode to reduce energy usage")
