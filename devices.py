@@ -1,16 +1,21 @@
 import streamlit as st
 
-st.title("Device Control")
+def show():
+    st.title("⚙️ Device Control")
 
-device = st.selectbox(
-    "Select Device",
-    ["Air Conditioner", "Fan", "Light", "Washing Machine"]
-)
+    device = st.selectbox(
+        "Select Device",
+        ["Air Conditioner", "Fan", "Light", "Washing Machine"]
+    )
 
-power = st.toggle("Power ON / OFF")
+    power = st.toggle("Power ON / OFF")
 
-mode = st.selectbox("Mode", ["Normal", "Eco", "Turbo"])
+    mode = st.selectbox(
+        "Operating Mode",
+        ["Normal", "Eco", "Turbo"]
+    )
 
-temp = st.slider("Temperature", 16, 30)
+    if device == "Air Conditioner":
+        temp = st.slider("Temperature (°C)", 16, 30)
 
-st.success(f"{device} updated successfully (Demo)")
+    st.success(f"{device} settings updated (Demo)")
